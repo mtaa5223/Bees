@@ -5,6 +5,7 @@ using Photon.Realtime;
 using System.Text;
 using System.IO;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+using TMPro;
 
 public class NetworkManager: MonoBehaviourPunCallbacks
 {
@@ -13,7 +14,7 @@ public class NetworkManager: MonoBehaviourPunCallbacks
 
     public Button createButton;
     public Button joinButton;
-    public InputField inviteCodeInput;
+    public TMP_InputField inviteCodeInput;
 
     private string randomInviteCode; // 랜덤 초대 코드 저장 변수
 
@@ -56,6 +57,7 @@ public class NetworkManager: MonoBehaviourPunCallbacks
         // 방 생성
         RoomOptions roomOptions = new RoomOptions { MaxPlayers = MaxPlayers };
         PhotonNetwork.CreateRoom(randomInviteCode, roomOptions);
+        StartGame();
         Debug.Log("방을 만들었습니다");
     }
 
@@ -69,7 +71,10 @@ public class NetworkManager: MonoBehaviourPunCallbacks
 
         // 특정 방에 입장
         PhotonNetwork.JoinRoom(inputInviteCode);
+        StartGame();
         Debug.Log("방에 입장했습니다");
+
+
     }
 
     public override void OnJoinedRoom()
