@@ -492,7 +492,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4063875099321655062}
-  - component: {fileID: 4063875099314665162}
   - component: {fileID: 4175450482462204794}
   m_Layer: 0
   m_Name: OVRCameraRig
@@ -517,21 +516,6 @@ Transform:
   m_Father: {fileID: 4063875099321655064}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4063875099314665162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063875099321221946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usePerEyeCameras: 0
-  useFixedUpdateForTracking: 0
-  disableEyeAnchorCameras: 0
 --- !u!114 &4175450482462204794
 MonoBehaviour:
   m_ObjectHideFlags: 0
