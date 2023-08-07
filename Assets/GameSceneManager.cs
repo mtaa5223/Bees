@@ -8,9 +8,10 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab; // 플레이어 프리팹
     public GameObject beePrefab; // 비 프리팹
+    public GameObject Manager;
 
 
-
+    Vector3 spawnPosition2 = new Vector3(0f, 0f, 0f);
 
     float daycount = 0;
 
@@ -21,6 +22,7 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
     private void Awake()
     {
         CreatePlayer();
+        GameObject Man = PhotonNetwork.Instantiate(Manager.name, spawnPosition2, Quaternion.identity);
     }
 
     private void Update()
