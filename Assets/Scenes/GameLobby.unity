@@ -974,7 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoConnect: 1
   Version: 1
-  MaxPlayers: 4
+  MaxPlayers: 2
   playerTTL: -1
 --- !u!114 &1214110432
 MonoBehaviour:

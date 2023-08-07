@@ -15,7 +15,7 @@ public class BeeNetworkSetup : MonoBehaviourPunCallbacks
             LocalXRRigGameobject.SetActive(true);
 
 
-            SetLayerRecursively(AvatarBodyGameobject, 9);
+            SetLayerRecursively(AvatarBodyGameobject, 10);
         }
         else
         {
@@ -36,4 +36,5 @@ public class BeeNetworkSetup : MonoBehaviourPunCallbacks
     {
 
     }
+
 }
