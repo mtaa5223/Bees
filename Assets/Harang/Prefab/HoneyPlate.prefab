@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHoney: 100
   currentHoney: 0
-  honeyShader: {fileID: -6465566751694194690, guid: 7b002d718c120bf4490a221341521d80, type: 3}
+  honeyShader: {fileID: -6465566751694194690, guid: 7acccfc7787072d43957d31340fcb037, type: 3}
 --- !u!54 &1656432859900775499
 Rigidbody:
   m_ObjectHideFlags: 0

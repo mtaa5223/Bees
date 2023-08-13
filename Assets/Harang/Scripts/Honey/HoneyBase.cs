@@ -13,7 +13,15 @@ public class HoneyBase : MonoBehaviour
 
     private void Update()
     {
-        AddHoney(5 * Time.deltaTime);
+        AddHoney(10 * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            AddHoney(20);
+        }
     }
 
     public void AddHoney(float honey)

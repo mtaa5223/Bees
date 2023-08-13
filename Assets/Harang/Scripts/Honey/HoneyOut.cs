@@ -11,9 +11,16 @@ public class HoneyOut : MonoBehaviour
     [SerializeField] private GameObject rotationObject;
 
     [SerializeField] private float rotateSpeed;
+    [SerializeField] private float honeySpeed;
+
+    private Transform honeyPlateAreas;
 
     private float previousAngle = 0f;
 
+    private void Start()
+    {
+        honeyPlateAreas = transform.GetChild(1).GetChild(0);
+    }
 
     private void Update()
     {
@@ -32,14 +39,22 @@ public class HoneyOut : MonoBehaviour
 
         float rotationAmount = angleChange * Time.deltaTime;
 
-        // 원의 회전 방향에 따라 오브젝트 회전 방향 설정
-        float circleRotationDirection = Mathf.Sign(angleChange);
-        float objectRotationDirection = -circleRotationDirection; // 반대 방향으로 조정
-
         // 오브젝트 회전
-        rotationObject.transform.Rotate(Vector3.forward, rotationAmount * objectRotationDirection * rotateSpeed, Space.Self);
+        rotationObject.transform.Rotate(Vector3.forward, rotationAmount * rotateSpeed, Space.Self);
 
         // 이전 각도 업데이트
         previousAngle = currentAngle;
+
+        foreach (Transform honeyPlateArea in honeyPlateAreas)
+        {
+            if (honeyPlateArea.GetComponent<SetArea>().inputObject != null)
+            {
+                GameObject honeyPlate = honeyPlateArea.GetComponent<SetArea>().inputObject;
+                if (honeyPlate.GetComponent<HoneyPlate>().CurrentHoney > 0)
+                {
+                    honeyPlate.GetComponent<HoneyPlate>().CurrentHoney -= rotationAmount * honeySpeed;
+                }
+            }
+        }
     }
 }
