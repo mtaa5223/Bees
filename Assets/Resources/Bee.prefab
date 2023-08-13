@@ -105,7 +105,7 @@ MonoBehaviour:
   positionLerpSpeed: 0.85
   rotationLerpSpeed: 0.85
   scaleLerpSpeed: 0.85
-  timeCorrectionSpeed: 0.1
+  timeCorrectionSpeed: 0.12
   snapTimeThreshold: 0.3
   syncPosition: 0
   syncRotation: 0

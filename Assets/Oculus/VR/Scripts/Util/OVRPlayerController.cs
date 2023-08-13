@@ -182,7 +182,8 @@ public class OVRPlayerController : MonoBehaviour
     {
         player = GameObject.Find("Player(Clone)").gameObject;
         cameraRigObject = transform.gameObject;
-        cameraRig = cameraRigObject.GetComponent<OVRCameraRig>();
+        OVRCameraRig oVRCameraRig = cameraRigObject.GetComponent<OVRCameraRig>();
+        cameraRig = oVRCameraRig;
     }
 
     void Awake()

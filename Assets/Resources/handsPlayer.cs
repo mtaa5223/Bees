@@ -7,6 +7,7 @@ using Photon.Pun;
 
 public class handsPlayer : MonoBehaviourPun
 {
+    [SerializeField] private GameObject player;
     private enum ControllerDir
     {
         leftController,
@@ -21,8 +22,8 @@ public class handsPlayer : MonoBehaviourPun
     {
         playerHands = GameObject.Find("hands").gameObject;
 
-        int honeyGunNumber = controllerDir == ControllerDir.leftController ? 0 : 1;
-        playerHands = playerHands.transform.GetChild(honeyGunNumber).gameObject;
+        int PlayerHand = controllerDir == ControllerDir.leftController ? 0 : 1;
+        player = playerHands.transform.GetChild(PlayerHand).gameObject;
     }
 
     // Update is called once per frame
@@ -30,8 +31,8 @@ public class handsPlayer : MonoBehaviourPun
     {
         if (photonView.IsMine)
         {
-            playerHands.transform.position = transform.position;
-            playerHands.transform.rotation = transform.rotation;
+            player.transform.position = transform.position;
+            player.transform.rotation = transform.rotation;
         }
 }
     }
