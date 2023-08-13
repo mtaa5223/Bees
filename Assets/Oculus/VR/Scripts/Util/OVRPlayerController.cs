@@ -167,6 +167,11 @@ public class OVRPlayerController : MonoBehaviour
     private bool prevHatRight = false;
     private float SimulationRate = 60f;
     private float buttonRotation = 0f;
+    private GameObject cameraRigObject;
+    private OVRCameraRig cameraRig;
+
+    GameObject player;
+
 
     // Set to true when a snap turn has occurred, code requires one frame of centered thumbstick to enable another snap turn.
     private bool ReadyToSnapTurn;
@@ -175,10 +180,9 @@ public class OVRPlayerController : MonoBehaviour
 
     void Start()
     {
-        // Add eye-depth as a camera offset from the player controller
-        var p = CameraRig.transform.localPosition;
-        p.z = OVRManager.profile.eyeDepth;
-        CameraRig.transform.localPosition = p;
+        player = GameObject.Find("Player(Clone)").gameObject;
+        cameraRigObject = transform.gameObject;
+        cameraRig = cameraRigObject.GetComponent<OVRCameraRig>();
     }
 
     void Awake()

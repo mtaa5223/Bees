@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SamplesInfoPanel
   - Flower
+  - HoneyPlate
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Interatable
   - Player
   - BeeAvaterBody
-  - 
-  - 
+  - Hands
+  - GrabbableHandler
   - 
   - 
   - 

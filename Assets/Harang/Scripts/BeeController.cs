@@ -36,17 +36,20 @@ public class BeeController : MonoBehaviour
 
     [SerializeField] private GameObject beeModel;
     [SerializeField] private float moveSpeed;
+    GameObject beeObject;
 
     private bool doRotate = false;
 
     void Start()
     {
-        cameraRigObject = transform.GetChild(0).gameObject;
+        beeObject = GameObject.Find("Bee(Clone)").gameObject;
+        cameraRigObject = transform.gameObject;
         cameraRig = cameraRigObject.GetComponent<OVRCameraRig>();
     }
 
     void Update()
     {
+        Debug.Log(cameraRigObject);
         #region 상하 이동
         Vector3 controllerRotation = cameraRig.rightHandAnchor.rotation.eulerAngles;
 
@@ -80,7 +83,7 @@ public class BeeController : MonoBehaviour
             float tempSpeed = downData.maxSpeed - downData.minSpeed;
             speed = -(tempSpeed * (xRotation / downData.maxAngle) + downData.minSpeed);
         }
-        transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
+        beeObject.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
         #endregion
 
         #region 앞뒤양옆 이동
@@ -94,7 +97,7 @@ public class BeeController : MonoBehaviour
 
         Vector3 moveDirection = (centerEyeAnchor.forward * thumbstickInput.y) + (centerEyeAnchor.right * thumbstickInput.x);
 
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+        beeObject.transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
         #endregion
         
         Vector2 leftThumbstickDir = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
