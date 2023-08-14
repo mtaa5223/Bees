@@ -194,7 +194,6 @@ GameObject:
   - component: {fileID: 1600965032861640347}
   - component: {fileID: 2958517151238542408}
   - component: {fileID: 1197758093173675345}
-  - component: {fileID: 3402692962553731659}
   m_Layer: 0
   m_Name: HoneyGun
   m_TagString: Untagged
@@ -285,19 +284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrigger: 0
---- !u!114 &3402692962553731659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2924267116243874727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b977cf9510db764c8d6ca37fc812a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerDir: 0
 --- !u!1 &4170252528065931572
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2319073142937198095}
   - component: {fileID: 3928510544734411159}
-  - component: {fileID: 5371406584872712714}
-  - component: {fileID: 1411979417420331340}
+  - component: {fileID: 5192754679830522369}
+  - component: {fileID: 2180638630060832773}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2319073142937198081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000009445046, y: 1.7711, z: 0.10988}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000019470718}
+  m_LocalPosition: {x: 0.24340022, y: -1.0254372, z: -1.6340413}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55,13 +55,13 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 1411979417420331340}
+  - {fileID: 2180638630060832773}
   - {fileID: 2230606792743215504}
   - {fileID: 3389024177966613219}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5371406584872712714
+--- !u!114 &5192754679830522369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 7086973052873894962, guid: 9fa94facbf335ed4e9969285c23d3fcd, type: 3}
---- !u!114 &1411979417420331340
+--- !u!114 &2180638630060832773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,48 +83,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2319073142937198081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8069ffa6ab7df7340ad5ce0c3da47526, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpolationBackTime: 0.12
-  extrapolationMode: 1
-  useExtrapolationTimeLimit: 1
-  extrapolationTimeLimit: 5
-  useExtrapolationDistanceLimit: 0
-  extrapolationDistanceLimit: 20
-  sendPositionThreshold: 0
-  sendRotationThreshold: 0
-  sendScaleThreshold: 0
-  sendVelocityThreshold: 0
-  sendAngularVelocityThreshold: 0
-  receivedPositionThreshold: 0
-  receivedRotationThreshold: 0
-  snapPositionThreshold: 0
-  snapRotationThreshold: 0
-  snapScaleThreshold: 0
-  positionLerpSpeed: 0.85
-  rotationLerpSpeed: 0.85
-  scaleLerpSpeed: 0.85
-  timeCorrectionSpeed: 0.12
-  snapTimeThreshold: 0.3
-  syncPosition: 0
-  syncRotation: 0
-  syncScale: 0
-  syncVelocity: 0
-  syncAngularVelocity: 0
-  isPositionCompressed: 1
-  isRotationCompressed: 1
-  isScaleCompressed: 1
-  isVelocityCompressed: 1
-  isAngularVelocityCompressed: 1
-  automaticallyResetTime: 1
-  isSmoothingAuthorityChanges: 0
-  whenToUpdateTransform: 0
-  setVelocityInsteadOfPositionOnNonOwners: 0
-  useLocalTransformOnly: 0
-  maxPositionDifferenceForVelocitySyncing: 10
-  ownerChangeIndicator: 1
-  receivedStatesCounter: 0
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6339094981553242362
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +422,10 @@ PrefabInstance:
     - target: {fileID: 2924267116243874727, guid: 7055ccd73b668c44f99579885a725e09, type: 3}
       propertyPath: m_Name
       value: HoneyGun (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402692962553731659, guid: 7055ccd73b668c44f99579885a725e09, type: 3}
+      propertyPath: controllerDir
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5433341510610510497, guid: 7055ccd73b668c44f99579885a725e09, type: 3}
       propertyPath: ObservedComponents.Array.size

@@ -716,7 +716,7 @@ MonoBehaviour:
     minSpeed: 0
     maxSpeed: 1.5
   xRotation: 0
-  beeModel: {fileID: 3409213697454820691, guid: 8ea196fbb72f36547aa1e6593013245f, type: 3}
+  beeModel: {fileID: 2319073142937198081, guid: 30ecabfcdcde85f45840d808b1a19a70, type: 3}
   moveSpeed: 5
 --- !u!1 &8084137000581804964
 GameObject:

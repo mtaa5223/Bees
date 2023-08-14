@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usePerEyeCameras: 0
   useFixedUpdateForTracking: 0
-  disableEyeAnchorCameras: 1
+  disableEyeAnchorCameras: 0
 --- !u!114 &3013884142766258496
 MonoBehaviour:
   m_ObjectHideFlags: 0
