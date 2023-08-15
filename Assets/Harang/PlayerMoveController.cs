@@ -1,27 +1,58 @@
+using Oculus.Platform;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMoveController : MonoBehaviour
 {
-    private Rigidbody rb;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed = 5.0f;
 
-    private void Awake()
+    private OVRCameraRig cameraRig;
+    private bool doRotate = false;
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        cameraRig = GetComponent<OVRCameraRig>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 thumbstickInput = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
+        #region Player Move
+        Vector2 leftThumbstickDir = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
 
-        Vector3 movementDirection = new Vector3(thumbstickInput.x, 0f, thumbstickInput.y).normalized;
+        Vector3 forward = cameraRig.centerEyeAnchor.forward;
+        Vector3 right = cameraRig.centerEyeAnchor.right;
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
 
-        // Rigidbody를 사용하여 이동
-        Vector3 movement = movementDirection * moveSpeed * Time.deltaTime;
-        rb.MovePosition(transform.position + movement);
+        Vector3 moveDirection = leftThumbstickDir.y * forward + leftThumbstickDir.x * right;
+
+        moveDirection.Normalize();
+        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        #endregion
+
+        #region Player Rotate
+        Vector2 rightThumbstickInput = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick);
+        if (rightThumbstickInput.x == 0)
+        {
+            doRotate = false;
+        }
+
+        if (Mathf.Abs(rightThumbstickInput.x) >= 0.7f && !doRotate)
+        {
+            float yAngle = 0;
+            yAngle = rightThumbstickInput.x > 0 ? 45 : -45;
+
+            Quaternion cameraRigRotation = transform.rotation;
+            Quaternion rotation = Quaternion.Euler(cameraRigRotation.eulerAngles.x, cameraRigRotation.eulerAngles.y + yAngle, cameraRigRotation.eulerAngles.z);
+
+            transform.rotation = rotation;
+            doRotate = true;
+        }
+        #endregion
     }
 }

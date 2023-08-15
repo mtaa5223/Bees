@@ -83,8 +83,7 @@ namespace OVRTouchSample
 
         private void Start()
         {
-            if (photonView.IsMine)
-            {
+           
                 m_showAfterInputFocusAcquired = new List<Renderer>();
 
                 // Collision starts disabled. We'll enable it for certain cases such as making a fist.
@@ -104,24 +103,22 @@ namespace OVRTouchSample
                 OVRPlugin.SendEvent("custom_hand", (SceneManager.GetActiveScene().name == "CustomHands").ToString(),
                     "sample_framework");
 #endif
-            }
+            
 
         }
 
         private void OnDestroy()
         {
-            if (photonView.IsMine)
-            {
+           
                 OVRManager.InputFocusAcquired -= OnInputFocusAcquired;
                 OVRManager.InputFocusLost -= OnInputFocusLost;
-            }
+            
       
         }
 
         private void Update()
         {
-            if (photonView.IsMine)
-            {
+            
                 UpdateCapTouchStates();
 
                 m_pointBlend = InputValueRateChange(m_isPointing, m_pointBlend);
@@ -133,7 +130,7 @@ namespace OVRTouchSample
                 CollisionEnable(collisionEnabled);
 
                 UpdateAnimStates();
-            }
+            
             
         }
 
@@ -147,8 +144,7 @@ namespace OVRTouchSample
 
         private void LateUpdate()
         {
-            if(photonView.IsMine)
-            {
+            
                 if (m_collisionEnabled && m_collisionScaleCurrent + Mathf.Epsilon < COLLIDER_SCALE_MAX)
                 {
                     m_collisionScaleCurrent = Mathf.Min(COLLIDER_SCALE_MAX,
@@ -160,7 +156,7 @@ namespace OVRTouchSample
                             m_collisionScaleCurrent);
                     }
                 }
-            }
+            
             // Hand's collision grows over a short amount of time on enable, rather than snapping to on, to help somewhat with interpenetration issues.
        
         }
@@ -168,8 +164,7 @@ namespace OVRTouchSample
         // Simple Dash support. Just hide the hands.
         private void OnInputFocusLost()
         {
-            if(photonView.IsMine)
-            {
+            
                 if (gameObject.activeInHierarchy)
                 {
                     m_showAfterInputFocusAcquired.Clear();
@@ -187,14 +182,13 @@ namespace OVRTouchSample
 
                     m_restoreOnInputAcquired = true;
                 }
-            }
+            
            
         }
 
         private void OnInputFocusAcquired()
         {
-            if (photonView.IsMine)
-            {
+            
                 if (m_restoreOnInputAcquired)
                 {
                     for (int i = 0; i < m_showAfterInputFocusAcquired.Count; ++i)
@@ -212,7 +206,7 @@ namespace OVRTouchSample
 
                     m_restoreOnInputAcquired = false;
                 }
-            }
+            
            
         }
 
@@ -225,8 +219,7 @@ namespace OVRTouchSample
 
         private void UpdateAnimStates()
         {
-            if (photonView.IsMine)
-            {
+           
                 bool grabbing = m_grabber.grabbedObject != null;
                 HandPose grabPose = m_defaultGrabPose;
                 if (grabbing)
@@ -256,7 +249,7 @@ namespace OVRTouchSample
 
                 float pinch = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, m_controller);
                 m_animator.SetFloat("Pinch", pinch);
-            }
+            
           
         }
 
@@ -264,8 +257,7 @@ namespace OVRTouchSample
 
         private void CollisionEnable(bool enabled)
         {
-            if (photonView.IsMine)
-            {
+           
                 if (m_collisionEnabled == enabled)
                 {
                     return;
@@ -294,7 +286,7 @@ namespace OVRTouchSample
                         collider.transform.localScale =
                             new Vector3(COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN);
                     }
-                }
+                
             }
         }
            

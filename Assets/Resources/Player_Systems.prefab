@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 3013884142766258518}
   - component: {fileID: 3013884142766258496}
   - component: {fileID: 2901603904147156198}
+  - component: {fileID: -6596059459844100357}
   m_Layer: 0
   m_Name: Player_Systems
   m_TagString: Untagged
@@ -203,6 +204,19 @@ MonoBehaviour:
   resetHmdPoseByMiddleMouseButton: 1
   activateKeys: 3201000031010000
   pitchKeys: 3401000033010000
+--- !u!114 &-6596059459844100357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013884142760725670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b46dee81cc5a83408d7fb59d6f52817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
 --- !u!1 &3013884142760725672
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +523,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHandAnchor
       objectReference: {fileID: 0}
+    - target: {fileID: 5812999799560637901, guid: 20a623dd5cb782f4eb58a39e334419e3, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 3013884142760725670}
+    - target: {fileID: 5812999799560637901, guid: 20a623dd5cb782f4eb58a39e334419e3, type: 3}
+      propertyPath: m_parentTransform
+      value: 
+      objectReference: {fileID: 3013884142760320398}
+    - target: {fileID: 5814125124962981623, guid: 20a623dd5cb782f4eb58a39e334419e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a623dd5cb782f4eb58a39e334419e3, type: 3}
 --- !u!4 &3013884142760320398 stripped
@@ -569,6 +595,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7075431600185758027, guid: 574c315666c3942418373b9e655a89fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552521716263222727, guid: 574c315666c3942418373b9e655a89fa, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 3013884142760725670}
+    - target: {fileID: 8552521716263222727, guid: 574c315666c3942418373b9e655a89fa, type: 3}
+      propertyPath: m_parentTransform
+      value: 
+      objectReference: {fileID: 3013884142760316384}
+    - target: {fileID: 8554224024766869625, guid: 574c315666c3942418373b9e655a89fa, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

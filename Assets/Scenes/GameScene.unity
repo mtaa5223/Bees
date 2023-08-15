@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067242a428f55d34390f5f80a9522ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 7554470347875654345, guid: 9f4d3121f301389419b106a5fdc61cd3, type: 3}
+  playerPrefab: {fileID: 222797426668198989, guid: 9f4d3121f301389419b106a5fdc61cd3, type: 3}
   beePrefab: {fileID: 2319073142937198081, guid: 30ecabfcdcde85f45840d808b1a19a70, type: 3}
 --- !u!4 &1090610370
 Transform:
@@ -483,6 +483,10 @@ PrefabInstance:
     - target: {fileID: 1656432859900775496, guid: 9ba212bd87a899943868829f627f6627, type: 3}
       propertyPath: m_grabPoints.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656432859900775499, guid: 9ba212bd87a899943868829f627f6627, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7287615472732490316, guid: 9ba212bd87a899943868829f627f6627, type: 3}
       propertyPath: m_LocalScale.x

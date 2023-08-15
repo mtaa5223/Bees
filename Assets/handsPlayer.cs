@@ -20,7 +20,7 @@ public class handsPlayer : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        playerHands = GameObject.Find("hands").gameObject;
+        playerHands = GameObject.Find("Hands").gameObject;
 
         int PlayerHand = controllerDir == ControllerDir.leftController ? 0 : 1;
         player = playerHands.transform.GetChild(PlayerHand).GetChild(0).GetChild(0).gameObject;
