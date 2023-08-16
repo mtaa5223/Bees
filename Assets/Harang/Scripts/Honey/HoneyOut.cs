@@ -9,6 +9,10 @@ public class HoneyOut : MonoBehaviour
     
     [SerializeField] private GameObject CrankLever;
     [SerializeField] private GameObject rotationObject;
+    [SerializeField] private Renderer bigHoneyRenderer;
+
+    [SerializeField] private float maxBigHoney;
+    private float currentBigHoney;
 
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float honeySpeed;
@@ -53,6 +57,11 @@ public class HoneyOut : MonoBehaviour
                 if (honeyPlate.GetComponent<HoneyPlate>().CurrentHoney > 0)
                 {
                     honeyPlate.GetComponent<HoneyPlate>().CurrentHoney -= rotationAmount * honeySpeed;
+                    if (currentBigHoney >= maxBigHoney)
+                    {
+                        currentBigHoney += rotationAmount * honeySpeed;
+                    }
+                    bigHoneyRenderer.material.SetFloat("_Fill", currentBigHoney / currentBigHoney);
                 }
             }
         }

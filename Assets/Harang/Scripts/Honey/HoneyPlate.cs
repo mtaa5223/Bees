@@ -47,8 +47,6 @@ public class HoneyPlate : MonoBehaviourPun
         {
             Pv.RPC("Fill", RpcTarget.All);
         }
-
-
     }
 
     [PunRPC]

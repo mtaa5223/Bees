@@ -823,7 +823,7 @@ MonoBehaviour:
   RandomOffset: 0
   ClampY: 1
   PrefabsToInstantiate:
-  - {fileID: 813215866535814009, guid: 8b40bb3e7215b9b4295c2d2c00a36713, type: 3}
+  - {fileID: 813215866535814009, guid: 45e54cf396a31a74caa7ea5ab423de4f, type: 3}
   AutoSpawnObjects: 1
 --- !u!4 &1891314510
 Transform:

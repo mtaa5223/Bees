@@ -8,7 +8,7 @@ public class HoneyBase : MonoBehaviour
 
     private void Start()
     {
-        honeyPlateAreas = transform.GetChild(1);
+        honeyPlateAreas = transform.GetChild(2);
     }
 
     private void Update()
