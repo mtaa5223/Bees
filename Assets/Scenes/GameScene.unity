@@ -994,6 +994,11 @@ PrefabInstance:
       objectReference: {fileID: -6922793697723135513, guid: 4c0849d509fdaef4aa0cb0480bb8ef24, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a84758dd25ac1404caecc2de49423002, type: 3}
+--- !u!23 &47080733 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2178125706149859757, guid: a84758dd25ac1404caecc2de49423002, type: 3}
+  m_PrefabInstance: {fileID: 47080732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &47199550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27752,6 +27757,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4428259316712387550, guid: 1e3ea88225b576840bc7bec1cb6e0577, type: 3}
+      propertyPath: honeySpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428259316712387550, guid: 1e3ea88225b576840bc7bec1cb6e0577, type: 3}
+      propertyPath: maxBigHoney
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428259316712387550, guid: 1e3ea88225b576840bc7bec1cb6e0577, type: 3}
+      propertyPath: bigHoneyRenderer
+      value: 
+      objectReference: {fileID: 47080733}
     - target: {fileID: 4428259316712387551, guid: 1e3ea88225b576840bc7bec1cb6e0577, type: 3}
       propertyPath: m_Name
       value: HoneyOut

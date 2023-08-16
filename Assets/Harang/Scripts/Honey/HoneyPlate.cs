@@ -46,10 +46,7 @@ public class HoneyPlate : MonoBehaviourPun
 
         honeyRenderer.material.SetFloat("_MinRemap", -0.85f);
         honeyRenderer.material.SetFloat("_MaxRemap", 0.85f);
-
-       
     }
-
 
     private void Update()
     {
