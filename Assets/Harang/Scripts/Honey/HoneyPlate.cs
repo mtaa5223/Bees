@@ -43,20 +43,16 @@ public class HoneyPlate : MonoBehaviourPun
         PhotonView Pv = GetComponent<PhotonView>();
         honeyRenderer = transform.GetChild(0).GetComponent<Renderer>();
         honeyRenderer.material = new Material(honeyShader);
-        if (photonView.IsMine)
-        {
-            Pv.RPC("Fill", RpcTarget.All);
-        }
+
+        honeyRenderer.material.SetFloat("_MinRemap", -0.85f);
+        honeyRenderer.material.SetFloat("_MaxRemap", 0.85f);
+
+       
     }
 
-    [PunRPC]
-    public void Fill()
-    {
-        honeyRenderer.material.SetFloat("_Fill", CurrentHoney / maxHoney);
-    }
+
     private void Update()
     {
-   
-       
+        honeyRenderer.material.SetFloat("_Fill", CurrentHoney / maxHoney);
     }
 }

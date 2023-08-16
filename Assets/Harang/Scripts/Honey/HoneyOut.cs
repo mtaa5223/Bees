@@ -61,7 +61,8 @@ public class HoneyOut : MonoBehaviour
                     {
                         currentBigHoney += rotationAmount * honeySpeed;
                     }
-                    bigHoneyRenderer.material.SetFloat("_Fill", currentBigHoney / currentBigHoney);
+                    Debug.Log(currentBigHoney += rotationAmount * honeySpeed);
+                    bigHoneyRenderer.material.SetFloat("_Fill", currentBigHoney / maxBigHoney);
                 }
             }
         }

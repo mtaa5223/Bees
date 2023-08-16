@@ -44,7 +44,7 @@ public class SetArea : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (autoInstallObject && other.GetComponent<OVRGrabbable>() != null)
+        if (autoInstallObject && other.GetComponent<OVRGrabbable>() != null && other.GetComponent<HoneyPlate>() != null)
         {
             if (!other.GetComponent<OVRGrabbable>().isGrabbed)
             {
