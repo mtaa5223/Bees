@@ -1,16 +1,19 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetArea : MonoBehaviour
+public class SetArea : MonoBehaviourPun
 {
-    private int inputObjectCount; 
+    private int inputObjectCount;
     private bool autoInstallObject = false;
 
     public GameObject inputObject;
+    PhotonView pv;
 
     void Start()
     {
+
         foreach (Transform child in transform)
         {
             if (child.GetComponent<ObjectInput>() != null)
@@ -22,6 +25,7 @@ public class SetArea : MonoBehaviour
     void Update()
     {
         int count = 0;
+
         foreach (Transform child in transform)
         {
             if (child.GetComponent<ObjectInput>() != null)
@@ -40,13 +44,20 @@ public class SetArea : MonoBehaviour
             inputObject.transform.position = transform.position;
             inputObject.transform.rotation = transform.rotation;
         }
+
+        if (inputObject != null && inputObject.GetComponent<OVRGrabbable>().isGrabbed)
+        {
+            inputObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GetComponent<MeshRenderer>().enabled = true;
+            inputObject = null;
+        }
     }
 
     void OnTriggerStay(Collider other)
     {
         if (autoInstallObject && other.GetComponent<OVRGrabbable>() != null && other.GetComponent<HoneyPlate>() != null)
         {
-            if (!other.GetComponent<OVRGrabbable>().isGrabbed)
+            if (!other.GetComponent<OVRGrabbable>().isGrabbed && inputObject == null)
             {
                 other.transform.position = transform.position;
                 other.transform.rotation = transform.rotation;
@@ -54,12 +65,8 @@ public class SetArea : MonoBehaviour
                 inputObject = other.gameObject;
                 GetComponent<MeshRenderer>().enabled = false;
             }
-            else
-            {
-                other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                inputObject = null;
-                GetComponent<MeshRenderer>().enabled = true;
-            }
+
         }
+
     }
 }

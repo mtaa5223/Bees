@@ -42,8 +42,10 @@ public class BeeController : MonoBehaviour
 
     void Start()
     {
+       
         beeObject = GameObject.Find("Bee(Clone)").gameObject;
-        cameraRigObject = transform.gameObject;
+        beeModel = beeObject.transform.GetChild(0).gameObject;
+       cameraRigObject = transform.gameObject;
         cameraRig = cameraRigObject.GetComponent<OVRCameraRig>();
     }
 
@@ -65,8 +67,7 @@ public class BeeController : MonoBehaviour
         if (xRotation <= 180 - upData.startAngle && xRotation > 0)
         {
             xRotation -= 180 - upData.startAngle;
-            Debug.Log(xRotation);
-
+         
             xRotation = Mathf.Clamp(Mathf.Abs(xRotation), 0.0f, upData.maxAngle);
             
             float tempSpeed = upData.maxSpeed - upData.minSpeed;
@@ -76,7 +77,7 @@ public class BeeController : MonoBehaviour
         if (xRotation >= -180 + downData.startAngle && xRotation < 0)
         {
             xRotation += 180 - downData.startAngle;
-            Debug.Log(xRotation);
+           
 
             xRotation = Mathf.Clamp(Mathf.Abs(xRotation), 0.0f, downData.maxAngle);
 
@@ -93,29 +94,34 @@ public class BeeController : MonoBehaviour
         beeModel.transform.position = centerEyeAnchor.transform.position;
         beeModel.transform.rotation = centerEyeAnchor.transform.rotation;
 
-        Vector2 thumbstickInput = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick);
+        Vector2 thumbstickInput = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
 
         Vector3 moveDirection = (centerEyeAnchor.forward * thumbstickInput.y) + (centerEyeAnchor.right * thumbstickInput.x);
 
         beeObject.transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
         #endregion
         
-        Vector2 leftThumbstickDir = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
-        if (leftThumbstickDir.x == 0)
+        Vector2 rightThumbstickDir = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick);
+        if (rightThumbstickDir.x == 0)
         {
             doRotate = false;
         }
 
-        if (Mathf.Abs(leftThumbstickDir.x) >= 0.7f && !doRotate)
+        if (Mathf.Abs(rightThumbstickDir.x) >= 0.7f && !doRotate)
         {
             float yAngle = 0;
-            yAngle = leftThumbstickDir.x > 0 ? 45 : -45;
+            yAngle = rightThumbstickDir.x > 0 ? 45 : -45;
 
             Quaternion cameraRigRotation = cameraRigObject.transform.rotation;
             Quaternion rotation = Quaternion.Euler(cameraRigRotation.eulerAngles.x, cameraRigRotation.eulerAngles.y + yAngle, cameraRigRotation.eulerAngles.z);
 
             cameraRigObject.transform.rotation = rotation;
             doRotate = true;
+        }
+
+        if (beeObject.transform.position.y <= 0.8f)
+        {
+            beeObject.transform.position = new Vector3(beeObject.transform.position.x, 0.8f, beeObject.transform.position.z);
         }
     }
 }

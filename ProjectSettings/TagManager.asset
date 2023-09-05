@@ -7,6 +7,9 @@ TagManager:
   - SamplesInfoPanel
   - Flower
   - HoneyPlate
+  - Bullet
+  - HoneyBase
+  - Bowl
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - BeeAvaterBody
   - Hands
   - GrabbableHandler
-  - 
-  - 
+  - GrabbableObject
+  - Player
   - 
   - 
   - 

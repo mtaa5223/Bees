@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 242966428797588567}
   - component: {fileID: 3226827651804295236}
   - component: {fileID: 6562710630690252885}
-  - component: {fileID: 5933796023332138964}
   m_Layer: 9
   m_Name: VRPlayer_1_1
   m_TagString: Untagged
@@ -56,7 +55,11 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 3226827651804295236}
-  - {fileID: 5933796023332138964}
+  - {fileID: 9174634829624380987}
+  - {fileID: 5645305636657306615}
+  - {fileID: 4466686960190132959}
+  - {fileID: 6768914337663005955}
+  - {fileID: 5299908482663284594}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -91,57 +94,6 @@ MonoBehaviour:
   LocalXRRigGameobject: {fileID: 3202353852415079495}
   AvatarHeadGameobject: {fileID: 1216609644347886702}
   AvatarBodyGameobject: {fileID: 6600537112836030726}
---- !u!114 &5933796023332138964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813215866535814009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8069ffa6ab7df7340ad5ce0c3da47526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interpolationBackTime: 0.1
-  extrapolationMode: 1
-  useExtrapolationTimeLimit: 1
-  extrapolationTimeLimit: 5
-  useExtrapolationDistanceLimit: 0
-  extrapolationDistanceLimit: 20
-  sendPositionThreshold: 0
-  sendRotationThreshold: 0
-  sendScaleThreshold: 0
-  sendVelocityThreshold: 0
-  sendAngularVelocityThreshold: 0
-  receivedPositionThreshold: 0
-  receivedRotationThreshold: 0
-  snapPositionThreshold: 0
-  snapRotationThreshold: 0
-  snapScaleThreshold: 0
-  positionLerpSpeed: 0.85
-  rotationLerpSpeed: 0.85
-  scaleLerpSpeed: 0.85
-  timeCorrectionSpeed: 0.1
-  snapTimeThreshold: 0.3
-  syncPosition: 0
-  syncRotation: 0
-  syncScale: 0
-  syncVelocity: 0
-  syncAngularVelocity: 0
-  isPositionCompressed: 1
-  isRotationCompressed: 1
-  isScaleCompressed: 1
-  isVelocityCompressed: 1
-  isAngularVelocityCompressed: 1
-  automaticallyResetTime: 1
-  isSmoothingAuthorityChanges: 0
-  whenToUpdateTransform: 0
-  setVelocityInsteadOfPositionOnNonOwners: 0
-  useLocalTransformOnly: 0
-  maxPositionDifferenceForVelocitySyncing: 10
-  ownerChangeIndicator: 1
-  receivedStatesCounter: 0
 --- !u!1 &1216609644347886702
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +105,7 @@ GameObject:
   - component: {fileID: 8792131268393598173}
   - component: {fileID: 5617329355701223013}
   - component: {fileID: 7345677932243668446}
+  - component: {fileID: 6768914337663005955}
   m_Layer: 6
   m_Name: Head3
   m_TagString: Untagged
@@ -226,6 +179,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6768914337663005955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216609644347886702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &2628337650959350069
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752029639883045748}
+  - component: {fileID: 9174634829624380987}
   m_Layer: 9
   m_Name: Avatar3
   m_TagString: Untagged
@@ -498,6 +468,22 @@ Transform:
   m_Father: {fileID: 3507833834145686855}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9174634829624380987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3340995532113885082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &5365431880940491367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1053,7 @@ GameObject:
   - component: {fileID: 481922140986190491}
   - component: {fileID: 6043872888794680021}
   - component: {fileID: 6557836722589519944}
+  - component: {fileID: 5645305636657306615}
   m_Layer: 7
   m_Name: Body3
   m_TagString: Untagged
@@ -1139,6 +1126,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5645305636657306615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600537112836030726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &7035950365825043916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1199,7 @@ GameObject:
   - component: {fileID: 63871738344171390}
   - component: {fileID: 4611821518506894186}
   - component: {fileID: 375602841920304132}
+  - component: {fileID: 5299908482663284594}
   m_Layer: 6
   m_Name: Hair3
   m_TagString: Untagged
@@ -1268,6 +1272,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5299908482663284594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118547403892318671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8588194726794276192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1842,7 @@ GameObject:
   - component: {fileID: 8667145200567532695}
   - component: {fileID: 6571666557068096118}
   - component: {fileID: 2003558281681628622}
+  - component: {fileID: 4466686960190132959}
   m_Layer: 0
   m_Name: HandR
   m_TagString: Untagged
@@ -1894,3 +1915,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4466686960190132959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098030660268024195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

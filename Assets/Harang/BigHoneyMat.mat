@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BigHoneyMat
-  m_Shader: {fileID: -6465566751694194690, guid: 7b002d718c120bf4490a221341521d80, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: d4550445d199ecb4b8a3dde48b926aa9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -25,11 +25,12 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _Fill: 0
-    - _MaxRemap: 3.8
-    - _MinRemap: -4.01
+    - _MaxRemap: 5
+    - _MinRemap: -5
     m_Colors:
     - _SideColor: {r: 0.46226418, g: 0.17509247, b: 0, a: 1}
     - _TopColor: {r: 0.7075472, g: 0.2653302, b: 0, a: 1}
+    - _Vector2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8401772148754918552
 MonoBehaviour:

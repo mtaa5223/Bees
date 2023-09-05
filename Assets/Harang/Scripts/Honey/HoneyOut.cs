@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -64,6 +65,11 @@ public class HoneyOut : MonoBehaviour
                     else
                     {
                         currentBigHoney = maxBigHoney;
+                    }
+
+                    if(maxBigHoney > 1000)
+                    {
+                        PhotonNetwork.LoadLevel("End");
                     }
                     bigHoneyRenderer.material.SetFloat("_Fill", currentBigHoney / maxBigHoney);
                 }

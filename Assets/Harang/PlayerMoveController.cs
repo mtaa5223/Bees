@@ -32,7 +32,7 @@ public class PlayerMoveController : MonoBehaviour
         Vector3 moveDirection = leftThumbstickDir.y * forward + leftThumbstickDir.x * right;
 
         moveDirection.Normalize();
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        transform.parent.position += moveDirection * moveSpeed * Time.deltaTime;
         #endregion
 
         #region Player Rotate

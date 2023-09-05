@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1656432859900775496}
   - component: {fileID: 1656432859900775498}
   - component: {fileID: 1656432859900775499}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HoneyPlate
   m_TagString: HoneyPlate
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7287615472732490319}
   - component: {fileID: 7287615472732490318}
   - component: {fileID: 7287615472732490317}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Honey
   m_TagString: Untagged
   m_Icon: {fileID: 0}

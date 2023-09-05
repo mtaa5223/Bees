@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class HoneyGun : MonoBehaviourPun, IPunObservable
+public class HoneyGun : MonoBehaviourPun
 {
     [System.Serializable]
     private enum ControllerDir
@@ -100,11 +100,5 @@ public class HoneyGun : MonoBehaviourPun, IPunObservable
         //Debug.Log(OVRInput.Get(OVRInput.RawButton.RHandTrigger));
     }
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
 
-        }
-    }
 }

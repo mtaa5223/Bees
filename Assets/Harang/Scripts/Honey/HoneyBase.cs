@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HoneyBase : MonoBehaviour
 {
-    private Transform honeyPlateAreas;
+    public Transform honeyPlateAreas;
 
     private void Start()
     {
@@ -13,25 +13,19 @@ public class HoneyBase : MonoBehaviour
 
     private void Update()
     {
-        AddHoney(10 * Time.deltaTime);
+        //AddHoney(10 * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bullet"))
-        {
-            AddHoney(20);
-        }
-    }
+ 
 
     public void AddHoney(float honey)
     {
         foreach (Transform honeyPlateArea in honeyPlateAreas)
         {
-            if (honeyPlateArea.GetComponent<SetArea>().inputObject != null)
+            if (honeyPlateArea.GetComponent<SetArea>().inputObject != null) 
             {
                 GameObject honeyPlate = honeyPlateArea.GetComponent<SetArea>().inputObject;
-                if (honeyPlate.GetComponent<HoneyPlate>().CurrentHoney < 100)
+                if (honey > 0 && honeyPlate.GetComponent<HoneyPlate>().CurrentHoney < 100)
                 {
                     honeyPlate.GetComponent<HoneyPlate>().CurrentHoney += honey;
                     return;
@@ -39,4 +33,47 @@ public class HoneyBase : MonoBehaviour
             }
         }
     }
+
+    public void DeleteHoney(float honey)
+    {
+        foreach (Transform honeyPlateArea in honeyPlateAreas)
+        {
+            if (honeyPlateArea.GetComponent<SetArea>().inputObject != null)
+            {
+                GameObject honeyPlate = honeyPlateArea.GetComponent<SetArea>().inputObject;
+                if (honeyPlate.GetComponent<HoneyPlate>().CurrentHoney > 0)
+                {
+                    honeyPlate.GetComponent<HoneyPlate>().CurrentHoney -= honey;
+                    return;
+                }
+            }
+        }
+    }
+
+    public bool NullHoney()
+    {
+        foreach (Transform honeyPlateArea in honeyPlateAreas)
+        {
+            if (honeyPlateArea.GetComponent<SetArea>().inputObject != null)
+            {
+                GameObject honeyPlate = honeyPlateArea.GetComponent<SetArea>().inputObject;
+                if (honeyPlate.GetComponent<HoneyPlate>().CurrentHoney > 0)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Debug.Log("沿馬櫛 極ししししししししししししししししししし");
+            Destroy(other.gameObject);
+        }
+    }
+
+
 }
