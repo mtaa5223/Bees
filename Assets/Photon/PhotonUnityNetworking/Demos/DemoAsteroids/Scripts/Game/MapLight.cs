@@ -31,7 +31,7 @@ public class MapLight : MonoBehaviour
 
     void UpdateText()
     {
-        textObject.text = "¼ýÀÚ: " + counter.ToString();
+      
       
     }
 }

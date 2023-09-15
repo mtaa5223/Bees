@@ -180,10 +180,10 @@ public class OVRPlayerController : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player(Clone)").gameObject;
-        cameraRigObject = transform.gameObject;
-        OVRCameraRig oVRCameraRig = cameraRigObject.GetComponent<OVRCameraRig>();
-        cameraRig = oVRCameraRig;
+        // Add eye-depth as a camera offset from the player controller
+        var p = CameraRig.transform.localPosition;
+        p.z = OVRManager.profile.eyeDepth;
+        CameraRig.transform.localPosition = p;
     }
 
     void Awake()
@@ -511,7 +511,7 @@ public class OVRPlayerController : MonoBehaviour
             }
             else
             {
-                transform.RotateAround(CameraRig.centerEyeAnchor.position, Vector3.up, euler.y);
+                transform.RotateAround(this.transform.position, Vector3.up, euler.y);
             }
         }
 #endif

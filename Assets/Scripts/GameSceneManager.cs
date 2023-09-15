@@ -10,7 +10,8 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
     public GameObject beePrefab; // 비 프리팹
     public GameObject clonePlayer;
     public GameObject panel;
-  
+    public Vector3 spawnPoint;
+
 
     private void Awake()
     {
@@ -20,8 +21,8 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
 
     public void Bee()
     {
-        Vector3 spawnPosition = new Vector3(Random.Range(-5f, 5f), 3f, Random.Range(-5f, 5f)); // 랜덤한 위치 설정
-        GameObject bee = PhotonNetwork.Instantiate(beePrefab.name, spawnPosition, Quaternion.identity);
+    
+        GameObject bee = PhotonNetwork.Instantiate(beePrefab.name, spawnPoint, Quaternion.identity);
         PhotonNetwork.LocalPlayer.TagObject = bee;
         Destroy(clonePlayer);
         Destroy(panel);
@@ -31,8 +32,7 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
     }
     public void player()
     {
-        Vector3 spawnPosition = new Vector3(Random.Range(-5f, 5f), 2f, Random.Range(-5f, 5f)); // 랜덤한 위치 설정
-        GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, Quaternion.identity);
+        GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint, Quaternion.identity);
         PhotonNetwork.LocalPlayer.TagObject = player;
         Destroy(clonePlayer);
         Destroy(panel);

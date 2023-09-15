@@ -6,8 +6,6 @@ public class OvrCreate : MonoBehaviourPun
     public GameObject boxPrefab;
     private PhotonView Pv;
 
-
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,15 +13,13 @@ public class OvrCreate : MonoBehaviourPun
 
         if (Pv.IsMine)
         {
-
             GameObject boxInstance = Instantiate(boxPrefab, transform.position, transform.rotation);
-            boxInstance.transform.SetParent(transform); // Set as a child of the current object
+            boxInstance.transform.SetParent(transform);// Set as a child of the current object
         }
-        else
+        if (boxPrefab.name == "Player_Systems")
         {
-            Debug.Log("123");
+            gameObject.AddComponent<OVRPlayerController>();
         }
-
 
     }
 
