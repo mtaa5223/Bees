@@ -41,7 +41,7 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
 
     public void Update()
     {
-        if(PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        if(PhotonNetwork.CurrentRoom.PlayerCount == 2)  
         {
           
         }

@@ -13,7 +13,6 @@ public class SetArea : MonoBehaviourPun
 
     void Start()
     {
-
         foreach (Transform child in transform)
         {
             if (child.GetComponent<ObjectInput>() != null)
@@ -45,7 +44,7 @@ public class SetArea : MonoBehaviourPun
             inputObject.transform.rotation = transform.rotation;
         }
 
-        if (inputObject != null && inputObject.GetComponent<OVRGrabbable>().isGrabbed)
+        if (inputObject != null && inputObject.GetComponent<OVRGrabbable>().isGrabbed && !inputObject.GetComponent<OVRGrabbable>().isNotGrabObject)
         {
             inputObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GetComponent<MeshRenderer>().enabled = true;
@@ -55,7 +54,7 @@ public class SetArea : MonoBehaviourPun
 
     void OnTriggerStay(Collider other)
     {
-        if (autoInstallObject && other.GetComponent<OVRGrabbable>() != null && other.GetComponent<HoneyPlate>() != null)
+        if (autoInstallObject && other.GetComponent<OVRGrabbable>() != null)
         {
             if (!other.GetComponent<OVRGrabbable>().isGrabbed && inputObject == null)
             {
@@ -64,9 +63,15 @@ public class SetArea : MonoBehaviourPun
                 other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 inputObject = other.gameObject;
                 GetComponent<MeshRenderer>().enabled = false;
+
+                if (other.CompareTag("Seed"))
+                {
+                    other.GetComponent<OVRGrabbable>().isNotGrabObject = true;
+                    other.GetComponent<MeshRenderer>().enabled = false;
+                    other.GetComponent<FlowerDataScript>().SetFlower(0);
+                    other.GetComponent<FlowerDataScript>().waterrayt = true;
+                }
             }
-
         }
-
     }
 }

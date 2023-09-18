@@ -45,6 +45,8 @@ public class OVRGrabbable : MonoBehaviour
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
 
+    public bool isNotGrabObject = false;
+
     /// <summary>
     /// If true, the object can currently be grabbed.
     /// </summary>
