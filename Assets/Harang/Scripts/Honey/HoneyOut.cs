@@ -7,13 +7,13 @@ using UnityEngine;
 
 public class HoneyOut : MonoBehaviour
 {
-    
     [SerializeField] private GameObject CrankLever;
     [SerializeField] private GameObject rotationObject;
     [SerializeField] private Renderer bigHoneyRenderer;
 
     [SerializeField] private float maxBigHoney;
     [SerializeField] private float currentBigHoney;
+    public float CurrentBigHoney { get { return currentBigHoney; } set { currentBigHoney = value; } }
 
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float honeySpeed;
