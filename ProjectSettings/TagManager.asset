@@ -10,6 +10,9 @@ TagManager:
   - Bullet
   - HoneyBase
   - Bowl
+  - Seed
+  - WaterArea
+  - Water
   layers:
   - Default
   - TransparentFX
