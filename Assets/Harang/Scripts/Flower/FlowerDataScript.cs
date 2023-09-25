@@ -17,6 +17,8 @@ public class FlowerDataScript : MonoBehaviour
     [SerializeField] private float currentWater = 0;
     public float CurrentWater { get { return currentWater; } set { currentWater = value; } }
     private int flowerGrade = 0;
+    public int FlowerGrade { get { return flowerGrade; } set { flowerGrade = value; } }
+
     public bool waterrayt = true;
 
     public FlowerData[] flowerDatas;

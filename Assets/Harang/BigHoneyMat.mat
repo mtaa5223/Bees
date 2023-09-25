@@ -25,8 +25,8 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _Fill: 0
-    - _MaxRemap: 5
-    - _MinRemap: -5
+    - _MaxRemap: 1.5
+    - _MinRemap: -1.5
     m_Colors:
     - _SideColor: {r: 0.46226418, g: 0.17509247, b: 0, a: 1}
     - _TopColor: {r: 0.7075472, g: 0.2653302, b: 0, a: 1}

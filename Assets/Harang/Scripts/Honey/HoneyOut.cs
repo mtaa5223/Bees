@@ -13,12 +13,15 @@ public class HoneyOut : MonoBehaviour
 
     [SerializeField] private float maxBigHoney;
     [SerializeField] private float currentBigHoney;
+    public float MaxBigHoney { get { return maxBigHoney; } set { maxBigHoney = value; } }
     public float CurrentBigHoney { get { return currentBigHoney; } set { currentBigHoney = value; } }
 
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float honeySpeed;
 
     [SerializeField] private Transform honeyPlateAreas;
+
+    [SerializeField] private GameObject[] fireWorks;
 
     private float previousAngle = 0f;
 
@@ -67,10 +70,7 @@ public class HoneyOut : MonoBehaviour
                         currentBigHoney = maxBigHoney;
                     }
 
-                    if(maxBigHoney > 1000)
-                    {
-                        PhotonNetwork.LoadLevel("End");
-                    }
+                
                     bigHoneyRenderer.material.SetFloat("_Fill", currentBigHoney / maxBigHoney);
                 }
             }

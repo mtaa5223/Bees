@@ -593,7 +593,7 @@ namespace PixelCrushers.DialogueSystem
             }
 
             // Check for use key or button (only if releasing button on same selection):
-            if ((useKey != KeyCode.None) && InputDeviceManager.IsKeyDown(useKey)) return true;
+            if (((useKey != KeyCode.None) && InputDeviceManager.IsKeyDown(useKey)) || OVRInput.GetDown(OVRInput.RawButton.A)) return true;
             if (!string.IsNullOrEmpty(useButton))
             {
                 if (DialogueManager.instance != null &&

@@ -205,7 +205,7 @@ MonoBehaviour:
   useConversationTitlePicker: 1
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 6d9b73f316634684d954ed6b4d2a22a3, type: 2}
+  selectedDatabase: {fileID: 11400000, guid: 7efb181d2814e104cb596f122b5195cf, type: 2}
 --- !u!114 &5093495183642604315
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8144881405678501033}
   - component: {fileID: 8144881405678501032}
   - component: {fileID: 8144881405678501030}
+  - component: {fileID: -6015144138407410916}
+  - component: {fileID: -5617749271670378571}
   m_Layer: 13
   m_Name: Seed
   m_TagString: Seed
@@ -154,15 +156,53 @@ MonoBehaviour:
   - flowerModel: {fileID: 3552549736002536889, guid: dcbcf38249104d442afa9ba75702674e, type: 3}
     growTime: 5
     maxWater: 10
-  - flowerModel: {fileID: 7575027505800244793, guid: 0d1f117bd2bfc744cb9e45e5e52031df, type: 3}
+  - flowerModel: {fileID: 4700509896595919091, guid: 7b5db016b750b4243a78877cd205c24c, type: 3}
     growTime: 10
     maxWater: 10
-  - flowerModel: {fileID: 3459475302769588982, guid: df1b65326566de641993627f532c52f9, type: 3}
+  - flowerModel: {fileID: 5047709180156232940, guid: ecdafa8043f830b44bf30656c2195128, type: 3}
     growTime: 10
     maxWater: 15
-  - flowerModel: {fileID: 8559012100300452774, guid: c586274f2dd693345b80b144800a8fc0, type: 3}
+  - flowerModel: {fileID: 6413544438367922263, guid: 0b1474223b093f446b9099de3c1146b0, type: 3}
     growTime: 0
     maxWater: 0
+--- !u!114 &-6015144138407410916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144881405678501039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-5617749271670378571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144881405678501039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8144881406133413875
 GameObject:
   m_ObjectHideFlags: 0

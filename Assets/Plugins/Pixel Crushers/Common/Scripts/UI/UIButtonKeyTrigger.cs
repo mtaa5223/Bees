@@ -51,7 +51,7 @@ namespace PixelCrushers
         {
             if (!monitorInput) return;
             if (!(m_selectable.enabled && m_selectable.interactable && m_selectable.gameObject.activeInHierarchy)) return;
-            if (InputDeviceManager.IsKeyDown(key) || 
+            if (InputDeviceManager.IsKeyDown(key) || OVRInput.GetDown(OVRInput.RawButton.A) ||
                 (!string.IsNullOrEmpty(buttonName) && InputDeviceManager.IsButtonDown(buttonName)) ||
                 (anyKeyOrButton && InputDeviceManager.IsAnyKeyDown()))
             {
